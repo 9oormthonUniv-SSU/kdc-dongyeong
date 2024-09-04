@@ -21,6 +21,8 @@ from lotto import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('' , views.index), 
-    path('hello/', views.hello, name='hello_main')
+    path('hello/', views.hello, name='hello_main'),
     path('lotto/', views.index, name='index'), # lotto > views.py 파일의 index 함수 호출
+    path('lotto/new', views.post, name = "new_lotto"),
+    path('lotto/<int:lottokey>/detail', views.detail, name='detail'),
 ]
